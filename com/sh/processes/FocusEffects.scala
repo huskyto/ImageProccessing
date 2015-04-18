@@ -12,7 +12,7 @@ object FocusEffects {
 
     def blur(image: Image, strength: Float, range: Int): Image = {
         
-        def neighborAverage(x: Int, y: Int): Color = {
+        def neighborAverage(x: Int, y: Int): Color = {          // todo test if posible without decomposing colors
             var (r, g, b, count) = (0, 0, 0, 0)
             for {
                 i <- -range to range

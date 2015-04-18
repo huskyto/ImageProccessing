@@ -28,13 +28,7 @@ object ColorFilters {
         applyToChannels(pixelGrayScale)(image)
     }
 
-    def getRed(image: Image): Image = {
-        //def pixelRed(rgb: Int): Int =
-            //new Color(new Color(rgb).getRed, 0, 0).getRGB
-
-        applyToChannels(_ & 0xFF0000)(image)
-    }
-
+    def getRed(image: Image) = applyToChannels(_ & 0xFF0000)(image)
     def getGreen(image: Image) = applyToChannels(_ & 0x00FF00)(image)
     def getBlue(image: Image) = applyToChannels(_ & 0x0000FF)(image)
 
