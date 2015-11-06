@@ -28,7 +28,8 @@ object ColorFilters {
         applyToChannels(pixelGrayScale)(image)
     }
 
-    def getRed(image: Image) = applyToChannels(_ & 0xFF0000)(image)
+    //def getRed(image: Image) = applyToChannels(_ & 0xFF0000)(image)
+    def getRed(image: Image) = applyToChannels(c => new Color(new Color(c).getRed, 0, 0).getRGB)(image)
     def getGreen(image: Image) = applyToChannels(_ & 0x00FF00)(image)
     def getBlue(image: Image) = applyToChannels(_ & 0x0000FF)(image)
 
